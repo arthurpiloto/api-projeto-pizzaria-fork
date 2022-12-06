@@ -74,7 +74,7 @@ app.post('/v1/product', cors(), jsonParser, async (request, response) => {
     response.json(message)
 })
 
-app.get('/v1/products', cors(), async (request, response) => {
+app.get('/.netlify/functions/server/v1/products', cors(), async (request, response) => {
     let statusCode
     let message
 
@@ -665,6 +665,8 @@ app.get('/v1/messages', cors(), async(request, response) => {
 
 /* ENDPOINTS PARA AS MENSAGENS */
 
-app.listen(3030, () => {
-    console.log('Server waiting for requests...');
-})
+// app.listen(3030, () => {
+//     console.log('Server waiting for requests...');
+// })
+
+module.exports = app;
